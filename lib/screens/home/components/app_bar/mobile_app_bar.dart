@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screens/home/components/my_painter.dart';
-import 'package:whatsapp/screens/home/components/search_bar.dart';
+import 'package:whatsapp/screens/home/components/app_bar/mobile_search_bar_painter.dart';
+import 'package:whatsapp/screens/home/components/app_bar/mobile_search_bar.dart';
 
-class DefaultAppBar extends StatefulWidget implements PreferredSizeWidget {
+class MobileAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(104.0);
 
   @override
-  _DefaultAppBarState createState() => _DefaultAppBarState();
+  _MobileAppBarState createState() => _MobileAppBarState();
 }
 
-class _DefaultAppBarState extends State<DefaultAppBar>
+class _MobileAppBarState extends State<MobileAppBar>
     with SingleTickerProviderStateMixin {
   double rippleStartX, rippleStartY;
   AnimationController _controller;
@@ -101,7 +101,7 @@ class _DefaultAppBarState extends State<DefaultAppBar>
         animation: _animation,
         builder: (context, child) {
           return CustomPaint(
-            painter: MyPainter(
+            painter: MobileSearchBarPainter(
               containerHeight: widget.preferredSize.height,
               center: Offset(rippleStartX ?? 0, rippleStartY ?? 0),
               radius: _animation.value * screenWidth,
@@ -111,7 +111,7 @@ class _DefaultAppBarState extends State<DefaultAppBar>
         },
       ),
       isInSearchMode
-          ? (SearchBar(
+          ? (MobileSearchSearchBar(
               onCancelSearch: cancelSearch,
               onSearchQueryChanged: onSearchQueryChange,
             ))

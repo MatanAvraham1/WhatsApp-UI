@@ -3,8 +3,9 @@ import 'package:flutter/painting.dart';
 import 'package:whatsapp/constants.dart';
 import 'package:whatsapp/screens/home/components/media_type_tile.dart';
 
-class SearchBar extends StatefulWidget implements PreferredSizeWidget {
-  SearchBar({
+class MobileSearchSearchBar extends StatefulWidget
+    implements PreferredSizeWidget {
+  MobileSearchSearchBar({
     Key key,
     @required this.onCancelSearch,
     @required this.onSearchQueryChanged,
@@ -17,10 +18,10 @@ class SearchBar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(56.0);
 
   @override
-  _SearchBarState createState() => _SearchBarState();
+  _MobileSearchSearchBarState createState() => _MobileSearchSearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar>
+class _MobileSearchSearchBarState extends State<MobileSearchSearchBar>
     with SingleTickerProviderStateMixin {
   String searchQuery = '';
   TextEditingController _searchFieldController = TextEditingController();
@@ -83,7 +84,20 @@ class _SearchBarState extends State<SearchBar>
                     ],
                   ),
                   Row(
-                    children: [],
+                    children: [
+                      MediaTypeTile(
+                        title: "GIFs",
+                        icon: Icons.gif,
+                      ),
+                      MediaTypeTile(
+                        title: "Audio",
+                        icon: Icons.headset,
+                      ),
+                      MediaTypeTile(
+                        title: "Documents",
+                        icon: Icons.file_copy,
+                      )
+                    ],
                   ),
                 ],
               ),

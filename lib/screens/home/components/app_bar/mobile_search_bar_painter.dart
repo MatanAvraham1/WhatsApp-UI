@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyPainter extends CustomPainter {
+class MobileSearchBarPainter extends CustomPainter {
   final Offset center;
   final double radius, containerHeight;
   final BuildContext context;
@@ -8,7 +8,8 @@ class MyPainter extends CustomPainter {
   Color color;
   double statusBarHeight, screenWidth;
 
-  MyPainter({this.context, this.containerHeight, this.center, this.radius}) {
+  MobileSearchBarPainter(
+      {this.context, this.containerHeight, this.center, this.radius}) {
     color = Colors.white;
     statusBarHeight = MediaQuery.of(context).padding.top;
     screenWidth = MediaQuery.of(context).size.width;

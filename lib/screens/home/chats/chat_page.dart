@@ -98,6 +98,22 @@ class _ChatPageState extends State<ChatPage> {
                 image: AssetImage("assets/chat_background.png"))),
         child: Stack(
           children: [
+            Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    child: ListView.builder(
+                      itemCount: widget.chat.messages.length,
+                      itemBuilder: (context, index) =>
+                          MessageTile(message: widget.chat.messages[index]),
+                    ),
+                  ),
+                ),
+                SendMessageForm(
+                  addMessage: addMesasge,
+                ),
+              ],
+            ),
             FadeAndTransitionAnimation(
               child: Align(
                 alignment: Alignment.topCenter,
@@ -118,28 +134,12 @@ class _ChatPageState extends State<ChatPage> {
                     child: Text(
                       "Today",
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w100),
+                          color: Colors.black, fontWeight: FontWeight.w200),
                     ),
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   ),
                 ),
               ),
-            ),
-            Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    child: ListView.builder(
-                      itemCount: widget.chat.messages.length,
-                      itemBuilder: (context, index) =>
-                          MessageTile(message: widget.chat.messages[index]),
-                    ),
-                  ),
-                ),
-                SendMessageForm(
-                  addMessage: addMesasge,
-                ),
-              ],
             ),
           ],
         ),
