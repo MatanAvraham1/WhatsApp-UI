@@ -23,11 +23,17 @@ class ChatTile extends StatefulWidget {
 
 class _ChatTileState extends State<ChatTile> {
   void selectChatOnMobile() {
+    setState(() {
+      isHeroEnabled = false;
+    });
+
     Navigator.of(context).push(SlideRightRoute(
         page: ChatPage(
       chat: widget.chat,
     )));
   }
+
+  bool isHeroEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +52,10 @@ class _ChatTileState extends State<ChatTile> {
       subtitle: Text(widget.chat.messages[0].content),
       leading: InkWell(
         onTap: () {
+          setState(() {
+            isHeroEnabled = true;
+          });
+
           var deviceType = getDeviceType(MediaQuery.of(context).size);
 
           if (deviceType == DeviceScreenType.mobile) {
@@ -60,7 +70,9 @@ class _ChatTileState extends State<ChatTile> {
           }
         },
         child: Hero(
-          tag: widget.chat.imageURL,
+          tag: isHeroEnabled
+              ? widget.chat.imageURL
+              : widget.chat.imageURL + "lalla",
           child: CircleAvatar(
             backgroundImage: AssetImage(widget.chat.imageURL),
           ),
