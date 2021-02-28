@@ -64,7 +64,7 @@ class _MobileAppBarState extends State<MobileAppBar>
 
     return Stack(children: [
       AppBar(
-        title: Text("Flutter App"),
+        title: Text("WhatsApp"),
         actions: <Widget>[
           GestureDetector(
             child: IconButton(
