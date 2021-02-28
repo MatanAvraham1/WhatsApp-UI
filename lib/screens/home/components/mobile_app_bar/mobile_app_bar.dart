@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screens/home/components/app_bar/mobile_search_bar_painter.dart';
-import 'package:whatsapp/screens/home/components/app_bar/mobile_search_bar.dart';
+import 'package:whatsapp/screens/home/components/mobile_app_bar/mobile_search_bar.dart';
+import 'package:whatsapp/screens/home/components/mobile_app_bar/mobile_search_bar_painter.dart';
 
 class MobileAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
