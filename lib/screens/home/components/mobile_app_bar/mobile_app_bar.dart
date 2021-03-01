@@ -67,11 +67,9 @@ class _MobileAppBarState extends State<MobileAppBar>
         title: Text("WhatsApp"),
         actions: <Widget>[
           GestureDetector(
-            child: IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
+            child: Icon(
+              Icons.search,
+              color: Colors.white,
             ),
             onTapUp: onSearchTapUp,
           ),
