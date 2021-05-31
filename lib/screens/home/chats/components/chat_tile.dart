@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:whatsapp/animations/slide_rigth_route.dart';
@@ -78,6 +79,15 @@ class _ChatTileState extends State<ChatTile> {
           ),
         ),
       ),
+      // leading: OpenContainer(
+      //   closedShape: CircleBorder(),
+      //   closedBuilder: (context, action) => CircleAvatar(
+      //     backgroundImage: AssetImage(widget.chat.imageURL),
+      //   ),
+      // openBuilder: (context, action) => ChatInfoPage(
+      //   chat: widget.chat,
+      // ),
+      // ),
     );
   }
 }
